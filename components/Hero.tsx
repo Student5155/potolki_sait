@@ -3,7 +3,7 @@
 import { useEffect, useRef, type CSSProperties } from "react";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
-import { gsap, prefersReducedMotion } from "@/lib/gsap";
+import { gsap, isTouchLayout, prefersReducedMotion } from "@/lib/gsap";
 import { images } from "@/lib/content";
 import { site } from "@/lib/site";
 
@@ -14,7 +14,7 @@ export function Hero() {
   const content = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (prefersReducedMotion()) return;
+    if (prefersReducedMotion() || isTouchLayout()) return;
     const ctx = gsap.context(() => {
       // глубина при прокрутке: изображение уходит медленнее текста
       gsap.to(media.current, {
@@ -65,7 +65,7 @@ export function Hero() {
               alt="Современная гостиная с дизайнерским потолком, встроенным светом и панорамными окнами"
               fill
               priority
-              sizes="(max-width: 767px) 180vw, 100vw"
+              sizes="(max-width: 767px) 130vw, 100vw"
               className="object-cover object-[62%_50%]"
             />
           </div>

@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import Image from "next/image";
-import { AnimatePresence, motion } from "motion/react";
+import { motion } from "motion/react";
 import { Plus } from "lucide-react";
 import { gallery, rooms, type RoomId } from "@/lib/content";
 import { Lines, Reveal } from "./Reveal";
@@ -61,21 +61,18 @@ export function Gallery() {
           ))}
         </Reveal>
 
-        <motion.div layout className="mt-8 grid grid-flow-dense grid-cols-2 gap-3 md:mt-12 md:auto-rows-[17vw] md:grid-cols-6 md:gap-5 2xl:auto-rows-[280px]">
-          <AnimatePresence mode="popLayout">
+        <div className="mt-8 grid grid-flow-dense grid-cols-2 gap-3 md:mt-12 md:auto-rows-[17vw] md:grid-cols-6 md:gap-5 2xl:auto-rows-[280px]">
             {items.map((g, i) => {
               const cls = room === "all" ? span[g.size ?? "default"] : i % 5 === 0 ? span.wide : span.default;
               const mobileWide = room === "all" ? g.size === "big" || g.size === "wide" : i % 3 === 0;
               return (
                 <motion.button
-                  layout
                   key={g.image}
                   onClick={() => setZoom(i)}
                   aria-label={`${g.title} — открыть на весь экран`}
                   className={`group relative overflow-hidden bg-ivory-2 ${mobileWide ? "col-span-2 aspect-[16/10]" : "aspect-[4/5]"} md:aspect-auto ${cls}`}
-                  initial={{ opacity: 0, scale: 0.96 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.96 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                 >
                   <Image
@@ -98,8 +95,7 @@ export function Gallery() {
                 </motion.button>
               );
             })}
-          </AnimatePresence>
-        </motion.div>
+        </div>
 
         <p className="mt-8 text-xs leading-relaxed text-arch">
           Изображения показывают возможные решения и служат визуальным ориентиром. Фотографии выполненных нами объектов

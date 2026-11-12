@@ -30,6 +30,12 @@ html.lenis body {
   overflow: hidden;
 }
 
+html,
+body {
+  overflow-x: clip;
+  max-width: 100%;
+}
+
 body {
   font-family: var(--font-sans);
   color: var(--color-graphite);
@@ -242,7 +248,9 @@ section[id] {
 /* ── Сцена освещения ─────────────────────────── */
 .lx {
   opacity: 0;
-  transition: opacity 0.9s ease;
+  transition: opacity 0.8s ease;
+  will-change: opacity;
+  pointer-events: none;
 }
 .lx.on {
   opacity: 1;
@@ -302,6 +310,38 @@ input[type="range"]::-moz-range-thumb {
   opacity: 0.07;
   mix-blend-mode: overlay;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── Телефоны и планшеты: только лёгкие для видеочипа эффекты ── */
+@media (pointer: coarse), (max-width: 767px) {
+  /* шум с режимом наложения перерисовывает весь экран при прокрутке */
+  .grain::after {
+    display: none;
+  }
+  /* раскрытие маской (clip-path) заменяем на проявление: оно не требует перерисовки изображения */
+  .rv-mask > * {
+    clip-path: none;
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+    transition:
+      opacity 0.9s var(--ease-out-expo),
+      transform 0.9s var(--ease-out-expo);
+  }
+  .rv-mask.is-in > * {
+    clip-path: none;
+    opacity: 1;
+    transform: none;
+  }
+  .rv {
+    transform: translate3d(0, 18px, 0);
+    transition-duration: 0.8s;
+  }
+  .rv-lines .line > span {
+    transition-duration: 0.9s;
+  }
+  .kenburns {
+    animation-duration: 16s;
+  }
 }
 
 /* ── Доступность: меньше движения ────────────── */

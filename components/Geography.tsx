@@ -27,7 +27,7 @@ export function Geography() {
   const current = points[active];
 
   return (
-    <section id="geo" className="bg-graphite text-ivory">
+    <section id="geo" className="overflow-hidden bg-graphite text-ivory">
       <div className="mx-auto max-w-[1680px] px-5 py-24 md:px-10 md:py-40">
         <div className="grid gap-12 lg:grid-cols-12 lg:gap-10">
           <div className="lg:col-span-6">

@@ -26,7 +26,7 @@ export function MeasureForm({ defaultCity }: { defaultCity?: string }) {
     }`;
 
   return (
-    <form className="border border-ivory/10 bg-graphite-2/80 p-6 backdrop-blur-md md:p-9" onSubmit={(e) => e.preventDefault()}>
+    <form className="border border-ivory/10 bg-graphite-2/95 p-6 md:p-9 lg:bg-graphite-2/80 lg:backdrop-blur-md" onSubmit={(e) => e.preventDefault()}>
       <p className="eyebrow text-champagne">Заказать замер</p>
       <p className="mt-3 text-sm leading-relaxed text-ivory/60">
         Выберите два пункта — и отправьте готовое сообщение. Телефон оставлять не нужно.

@@ -44,7 +44,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-ivory/70">
               <li><a href={telLink} className="text-base text-ivory transition-colors hover:text-champagne-2">{site.phoneDisplay}</a></li>
               <li><a href={waLink()} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ivory">WhatsApp</a></li>
-              <li><a href={tgLink} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ivory">Telegram</a></li>
+              <li><a href={tgLink()} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-ivory">Telegram</a></li>
             </ul>
           </div>
         </div>

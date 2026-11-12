@@ -18,11 +18,15 @@ export const site = {
 
 export const telLink = `tel:${site.phone}`;
 
-export const waLink = (text?: string) =>
-  `https://wa.me/${site.whatsapp}${text ? `?text=${encodeURIComponent(text)}` : ""}`;
+const defaultMessage = "Здравствуйте! Хочу обсудить натяжной потолок.";
 
-/** Telegram не умеет подставлять текст в чат по номеру, поэтому текст копируем в буфер. */
-export const tgLink = `https://t.me/${site.telegram}`;
+/** Ссылка на чат WhatsApp с уже набранным сообщением */
+export const waLink = (text: string = defaultMessage) =>
+  `https://api.whatsapp.com/send?phone=${site.whatsapp}&text=${encodeURIComponent(text)}`;
+
+/** Ссылка на чат Telegram по номеру телефона с уже набранным сообщением */
+export const tgLink = (text: string = defaultMessage) =>
+  `https://t.me/${site.telegram}?text=${encodeURIComponent(text)}`;
 
 export const nav = [
   { href: "/#types", label: "Решения" },

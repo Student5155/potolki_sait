@@ -91,7 +91,7 @@ export function Lighting() {
         </div>
 
         <div className="mt-14 grid gap-8 lg:mt-20 lg:grid-cols-12 lg:gap-10">
-          <Reveal className="lg:col-span-8">
+          <Reveal className="min-w-0 lg:col-span-8">
             <div ref={stage} className="relative overflow-hidden bg-black">
               <svg viewBox="0 0 1200 700" className="block h-auto w-full" role="img" aria-label="Схема комнаты: интерактивная демонстрация сценариев освещения потолка">
                 <defs>
@@ -186,35 +186,37 @@ export function Lighting() {
                 <rect x="596" y="596" width="8" height="34" fill="#2b2a28" />
                 <ellipse cx="600" cy="632" rx="46" ry="7" fill="#2b2a28" />
 
-                {/* ── Темнота: чем больше света включено, тем она слабее ── */}
-                <rect width="1200" height="700" fill="#07080a" style={{ opacity: darkness, transition: "opacity 1s ease" }} />
+              </svg>
+
+              {/* темнота: чем больше света включено, тем она слабее */}
+              <div className="absolute inset-0 bg-[#07080a]" style={{ opacity: darkness, transition: "opacity 0.8s ease", willChange: "opacity" }} />
 
                 {/* ── Парящий потолок ── */}
-                <g className={c("floating")}>
+              <svg viewBox="0 0 1200 700" aria-hidden className={`absolute inset-0 h-full w-full ${c("floating")}`}>
                   <polyline points="0,0 300,180 900,180 1200,0" fill="none" stroke="#f4f7ff" strokeWidth="46" filter="url(#f-glow-lg)" opacity="0.75" />
                   <rect x="300" y="180" width="600" height="120" fill="url(#lg-cool)" opacity="0.6" />
                   <polygon points="6,8 300,186 900,186 1194,8 1200,0 900,180 300,180 0,0" fill="#0a0a0a" />
                   <polyline points="6,8 300,186 900,186 1194,8" fill="none" stroke="#ffffff" strokeWidth="2.5" filter="url(#f-soft)" />
-                </g>
+              </svg>
 
                 {/* ── Контурная подсветка ── */}
-                <g className={c("contour")}>
+              <svg viewBox="0 0 1200 700" aria-hidden className={`absolute inset-0 h-full w-full ${c("contour")}`}>
                   <rect x="300" y="180" width="600" height="190" fill="url(#lg-warm)" />
                   <polygon points="0,0 300,180 300,350 0,330" fill="url(#lg-warm)" opacity="0.7" />
                   <polygon points="1200,0 900,180 900,350 1200,330" fill="url(#lg-warm)" opacity="0.7" />
                   <polyline points="0,0 300,180 900,180 1200,0" fill="none" stroke="#ffc978" strokeWidth="16" filter="url(#f-glow)" />
                   <polyline points="0,0 300,180 900,180 1200,0" fill="none" stroke="#ffe9c4" strokeWidth="3" />
-                </g>
+              </svg>
 
                 {/* ── Скрытый карниз ── */}
-                <g className={c("cornice")}>
+              <svg viewBox="0 0 1200 700" aria-hidden className={`absolute inset-0 h-full w-full ${c("cornice")}`}>
                   <rect x="632" y="182" width="246" height="300" fill="url(#lg-curtain)" />
                   <rect x="632" y="180" width="246" height="8" fill="#fff6e2" filter="url(#f-glow)" />
                   <rect x="640" y="181" width="230" height="3" fill="#fffaf0" />
-                </g>
+              </svg>
 
                 {/* ── Точечное освещение ── */}
-                <g className={c("spots")}>
+              <svg viewBox="0 0 1200 700" aria-hidden className={`absolute inset-0 h-full w-full ${c("spots")}`}>
                   {spots.map((s, i) => (
                     <g key={i}>
                       <polygon points={`${s.x - 9 * s.s},${s.y} ${s.x + 9 * s.s},${s.y} ${s.px + s.rx},${s.py} ${s.px - s.rx},${s.py}`} fill="url(#lg-cone)" />
@@ -223,10 +225,10 @@ export function Lighting() {
                       <ellipse cx={s.x} cy={s.y} rx={11 * s.s} ry={4 * s.s} fill="#ffffff" />
                     </g>
                   ))}
-                </g>
+              </svg>
 
                 {/* ── Световые линии ── */}
-                <g className={c("lines")}>
+              <svg viewBox="0 0 1200 700" aria-hidden className={`absolute inset-0 h-full w-full ${c("lines")}`}>
                   <ellipse cx="600" cy="610" rx="470" ry="100" fill="url(#rg-wash)" opacity="0.55" />
                   <ellipse cx="600" cy="90" rx="430" ry="110" fill="url(#rg-wash)" opacity="0.5" />
                   <g fill="none" stroke="#fff4dc" strokeLinecap="square" filter="url(#f-glow)" opacity="0.95">
@@ -239,10 +241,9 @@ export function Lighting() {
                     <polygon points="844,0 856,0 720.500,180 715.500,180" />
                     <polygon points="414,87 786,87 783,93 417,93" />
                   </g>
-                </g>
               </svg>
 
-              <p className="eyebrow pointer-events-none absolute left-4 top-4 text-ivory/50 md:left-6 md:top-6">
+              <p className="eyebrow pointer-events-none absolute left-3 top-3 bg-black/55 px-2.5 py-1.5 text-ivory/80 md:left-5 md:top-5">
                 {on.size === 0 ? "Свет выключен" : `Включено источников: ${on.size}`}
               </p>
             </div>
@@ -265,7 +266,7 @@ export function Lighting() {
             </div>
           </Reveal>
 
-          <Reveal delay={150} className="lg:col-span-4">
+          <Reveal delay={150} className="min-w-0 lg:col-span-4">
             <ul className="border-t border-ivory/10">
               {lights.map((l) => {
                 const active = on.has(l.key);

@@ -10,7 +10,7 @@ export function FinalCta({ image = images.final, defaultCity }: { image?: string
   return (
     <section id="contact" className="grain relative overflow-hidden bg-graphite text-ivory">
       <Parallax className="!absolute inset-0" amount={7}>
-        <Photo src={image} alt="Гостиная с тёплой подсветкой потолка — пример завершённого интерьера" sizes="(max-width: 767px) 180vw, 100vw" />
+        <Photo src={image} alt="Гостиная с тёплой подсветкой потолка — пример завершённого интерьера" sizes="(max-width: 767px) 130vw, 100vw" />
       </Parallax>
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,25,27,0.8)_0%,rgba(23,25,27,0.62)_45%,rgba(23,25,27,0.95)_100%)]" />
 

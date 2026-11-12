@@ -6,7 +6,6 @@ import { WhyUs } from "@/components/WhyUs";
 import { Lighting } from "@/components/Lighting";
 import { Process } from "@/components/Process";
 import { Calculator } from "@/components/Calculator";
-import { Reviews } from "@/components/Reviews";
 import { Geography } from "@/components/Geography";
 import { Faq } from "@/components/Faq";
 import { FinalCta } from "@/components/FinalCta";
@@ -26,7 +25,6 @@ export default function HomePage() {
       <Lighting />
       <Process />
       <Calculator />
-      <Reviews />
       <Geography />
       <Faq items={faq} />
       <FinalCta />

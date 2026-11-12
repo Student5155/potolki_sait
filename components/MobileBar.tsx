@@ -22,7 +22,7 @@ export function MobileBar() {
 
   return (
     <div
-      className={`fixed inset-x-0 bottom-0 z-40 border-t border-ivory/10 bg-graphite/92 pb-[env(safe-area-inset-bottom)] text-ivory backdrop-blur-md transition-transform duration-500 md:hidden ${
+      className={`fixed inset-x-0 bottom-0 z-40 border-t border-ivory/10 bg-graphite pb-[env(safe-area-inset-bottom)] text-ivory transition-transform duration-500 md:hidden ${
         show ? "translate-y-0" : "translate-y-full"
       }`}
     >

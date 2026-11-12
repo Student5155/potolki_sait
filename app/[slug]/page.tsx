@@ -54,7 +54,7 @@ export default async function CityPage({ params }: Props) {
       {/* Первый экран */}
       <section className="grain relative flex min-h-[86svh] flex-col justify-end overflow-hidden bg-graphite text-ivory">
         <div className="kenburns absolute inset-0">
-          <Image src={city.heroImage} alt={city.heroAlt} fill priority sizes="(max-width: 767px) 180vw, 100vw" className="object-cover" />
+          <Image src={city.heroImage} alt={city.heroAlt} fill priority sizes="(max-width: 767px) 130vw, 100vw" className="object-cover" />
         </div>
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(23,25,27,0.6)_0%,rgba(23,25,27,0)_75%),linear-gradient(180deg,rgba(23,25,27,0.72)_0%,rgba(23,25,27,0.25)_32%,rgba(23,25,27,0.5)_60%,rgba(23,25,27,0.96)_100%)]" />
         <div className="light-line absolute inset-x-5 top-16 md:inset-x-10 md:top-20" style={{ "--d": "0.3s" } as CSSProperties} aria-hidden />

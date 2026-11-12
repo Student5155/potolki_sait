@@ -104,7 +104,7 @@ export function CeilingTypes() {
               <Image src={t.image} alt={t.alt} fill sizes="78vw" className="object-cover" />
               <span className="absolute inset-0 bg-gradient-to-t from-graphite/85 via-transparent to-transparent" />
               <span className="eyebrow absolute left-4 top-4 text-ivory/80">{String(i + 1).padStart(2, "0")}</span>
-              <span className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center border border-ivory/30 bg-graphite/50 backdrop-blur-sm">
+              <span className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center border border-ivory/30 bg-graphite/70">
                 <Expand size={16} strokeWidth={1.25} />
               </span>
               <span className="h-display absolute bottom-4 left-4 right-20 text-left text-3xl">{t.name}</span>

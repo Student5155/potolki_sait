@@ -27,7 +27,7 @@ export function Header() {
       <header
         className={`fixed inset-x-0 top-0 z-50 text-ivory transition-[background-color,backdrop-filter,border-color] duration-700 ${
           scrolled && !open
-            ? "border-b border-ivory/10 bg-graphite/80 backdrop-blur-md"
+            ? "border-b border-ivory/10 bg-graphite/95 lg:bg-graphite/80 lg:backdrop-blur-md"
             : "border-b border-transparent"
         }`}
       >

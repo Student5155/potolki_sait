@@ -51,7 +51,7 @@ export function Lightbox({
           aria-modal="true"
           aria-label={item.title}
           data-lenis-prevent
-          className="fixed inset-0 z-[100] flex flex-col bg-graphite/97 text-ivory backdrop-blur-sm"
+          className="fixed inset-0 z-[100] flex flex-col bg-graphite/97 text-ivory"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}

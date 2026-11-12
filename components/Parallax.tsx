@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, type ReactNode } from "react";
-import { gsap, prefersReducedMotion } from "@/lib/gsap";
+import { gsap, isTouchLayout, prefersReducedMotion } from "@/lib/gsap";
 
 /** Медленное смещение изображения внутри рамки при прокрутке */
 export function Parallax({
@@ -17,7 +17,7 @@ export function Parallax({
   const inner = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (prefersReducedMotion()) return;
+    if (prefersReducedMotion() || isTouchLayout()) return;
     const ctx = gsap.context(() => {
       gsap.fromTo(
         inner.current,
