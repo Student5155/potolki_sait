@@ -6,6 +6,7 @@ import { ArrowRight } from "lucide-react";
 import { gsap, isTouchLayout, prefersReducedMotion } from "@/lib/gsap";
 import { images } from "@/lib/content";
 import { site } from "@/lib/site";
+import { withBase } from "@/lib/site";
 
 export function Hero() {
   const root = useRef<HTMLElement>(null);
@@ -98,11 +99,11 @@ export function Hero() {
           </p>
 
           <div className="hero-fade flex flex-col gap-5 sm:flex-row sm:items-center sm:gap-9" style={{ "--d": "1.55s" } as CSSProperties}>
-            <a href="/#calc" className="btn">
+            <a href={withBase("/#calc")} className="btn">
               Рассчитать стоимость
               <ArrowRight className="arrow" size={16} strokeWidth={1.25} />
             </a>
-            <a href="/#gallery" className="link-line self-start text-[0.8125rem] uppercase tracking-[0.16em] text-ivory/80 sm:self-auto">
+            <a href={withBase("/#gallery")} className="link-line self-start text-[0.8125rem] uppercase tracking-[0.16em] text-ivory/80 sm:self-auto">
               Смотреть решения
             </a>
           </div>

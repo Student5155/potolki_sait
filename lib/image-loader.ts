@@ -13,5 +13,5 @@ export default function imageLoader({
   if (src.startsWith("/u/")) {
     return `https://images.unsplash.com/${src.slice(3)}?auto=format&fit=crop&w=${width}&q=${quality ?? 70}`;
   }
-  return `${src}?w=${width}`;
+  return `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${src}?w=${width}`;
 }

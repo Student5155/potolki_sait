@@ -1,5 +1,6 @@
 import { advantages, stats } from "@/lib/content";
 import { Lines, Reveal } from "./Reveal";
+import { withBase } from "@/lib/site";
 
 export function WhyUs() {
   return (
@@ -36,7 +37,7 @@ export function WhyUs() {
           ))}
           <Reveal as="li" delay={200} className="flex flex-col justify-center border-b border-ivory/10 py-9">
             <p className="h-display text-[1.9rem] text-champagne-2">Хотите убедиться?</p>
-            <a href="/#calc" className="link-line mt-4 self-start text-[0.8125rem] uppercase tracking-[0.16em] text-ivory/80">
+            <a href={withBase("/#calc")} className="link-line mt-4 self-start text-[0.8125rem] uppercase tracking-[0.16em] text-ivory/80">
               Запросить расчёт
             </a>
           </Reveal>

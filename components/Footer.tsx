@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { cities } from "@/lib/cities";
 import { nav, site, telLink, tgLink, waLink } from "@/lib/site";
+import { withBase } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -20,7 +21,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm text-ivory/70">
               {nav.map((n) => (
                 <li key={n.href}>
-                  <a href={n.href} className="transition-colors hover:text-ivory">{n.label}</a>
+                  <a href={withBase(n.href)} className="transition-colors hover:text-ivory">{n.label}</a>
                 </li>
               ))}
             </ul>

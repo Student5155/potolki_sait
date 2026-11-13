@@ -41,3 +41,14 @@ WhatsApp и Telegram открываются с уже набранным тек�
 - `/natyazhnye-potolki-bolsheustikinskoe/`
 - `/natyazhnye-potolki-novobelokatay/`
 - `/sitemap.xml`, `/robots.txt`
+
+## Публикация на GitHub Pages (без Vercel)
+
+Сайт собирается в статические файлы (`output: "export"`), поэтому хостинг серверу не нужен.
+Автосборка лежит в `.github/workflows/deploy.yml`.
+
+1. Репозиторий → Settings → Pages → Source: **GitHub Actions**.
+2. После каждой загрузки в ветку `main` сайт пересобирается сам (вкладка Actions).
+3. Адрес: `https://ВАШ_ЛОГИН.github.io/ИМЯ_РЕПОЗИТОРИЯ/`.
+4. Свой домен: Settings → Pages → Custom domain, затем Settings → Secrets and variables → Actions → Variables →
+   создайте переменную `SITE_URL` со значением `https://ваш-домен.ru` и запустите сборку заново.

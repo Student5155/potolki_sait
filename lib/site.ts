@@ -16,6 +16,10 @@ export const site = {
   cities: ["Месягутово", "Верхние Киги", "Большеустьикинское", "Новобелокатай"],
 } as const;
 
+/** Префикс адреса, если сайт лежит не в корне домена (GitHub Pages: /репозиторий). Для next/link не нужен. */
+export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+export const withBase = (path: string) => `${basePath}${path}`;
+
 export const telLink = `tel:${site.phone}`;
 
 const defaultMessage = "Здравствуйте! Хочу обсудить натяжной потолок.";

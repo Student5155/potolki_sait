@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "motion/react";
 import { nav, site, telLink, waLink } from "@/lib/site";
 import { lockScroll } from "./SmoothScroll";
+import { withBase } from "@/lib/site";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -39,7 +40,7 @@ export function Header() {
 
           <nav aria-label="Основная навигация" className="hidden items-center gap-9 lg:flex">
             {nav.map((item) => (
-              <a key={item.href} href={item.href} className="text-[0.8125rem] tracking-wide text-ivory/75 transition-colors duration-300 hover:text-champagne-2">
+              <a key={item.href} href={withBase(item.href)} className="text-[0.8125rem] tracking-wide text-ivory/75 transition-colors duration-300 hover:text-champagne-2">
                 {item.label}
               </a>
             ))}
@@ -76,7 +77,7 @@ export function Header() {
               {nav.map((item, i) => (
                 <motion.a
                   key={item.href}
-                  href={item.href}
+                  href={withBase(item.href)}
                   onClick={() => setOpen(false)}
                   className="h-display border-b border-ivory/10 py-4 text-[2.5rem]"
                   initial={{ opacity: 0, y: 24 }}

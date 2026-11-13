@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Calculator, MessageCircle, Phone } from "lucide-react";
 import { telLink, waLink } from "@/lib/site";
+import { withBase } from "@/lib/site";
 
 /** Нижняя панель быстрого обращения — только на телефонах, появляется после первого экрана */
 export function MobileBar() {
@@ -35,7 +36,7 @@ export function MobileBar() {
           <MessageCircle size={18} strokeWidth={1.25} />
           Написать
         </a>
-        <a href="/#calc" className={`${item} text-champagne-2`}>
+        <a href={withBase("/#calc")} className={`${item} text-champagne-2`}>
           <Calculator size={18} strokeWidth={1.25} />
           Расчёт
         </a>

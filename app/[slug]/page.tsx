@@ -13,6 +13,7 @@ import { cities, cityBySlug } from "@/lib/cities";
 import { faq as commonFaq, processSteps } from "@/lib/content";
 import { breadcrumbSchema, faqSchema, localBusinessSchema, serviceSchema } from "@/lib/schema";
 import { site, telLink } from "@/lib/site";
+import { withBase } from "@/lib/site";
 
 export const dynamicParams = false;
 
@@ -71,7 +72,7 @@ export default async function CityPage({ params }: Props) {
             <span className="hero-line"><span style={{ "--i": -2 } as CSSProperties}>{city.inName}</span></span>
           </h1>
           <div className="hero-fade mt-9 flex flex-col gap-6 sm:flex-row sm:items-center sm:gap-10" style={{ "--d": "0.8s" } as CSSProperties}>
-            <a href="/#calc" className="btn">
+            <a href={withBase("/#calc")} className="btn">
               Рассчитать стоимость
               <ArrowRight className="arrow" size={16} strokeWidth={1.25} />
             </a>
@@ -132,7 +133,7 @@ export default async function CityPage({ params }: Props) {
           </div>
           <div className="mt-8 flex flex-col justify-between gap-4 text-xs leading-relaxed text-ivory/40 md:flex-row md:items-center">
             <p>Изображения — примеры решений. Фотографии наших объектов {city.inName} появятся здесь.</p>
-            <a href="/#gallery" className="link-line self-start text-[0.75rem] uppercase tracking-[0.16em] text-ivory/80">Вся галерея</a>
+            <a href={withBase("/#gallery")} className="link-line self-start text-[0.75rem] uppercase tracking-[0.16em] text-ivory/80">Вся галерея</a>
           </div>
         </div>
       </section>
@@ -142,7 +143,7 @@ export default async function CityPage({ params }: Props) {
         <div className="mx-auto max-w-[1680px] px-5 py-24 md:px-10 md:py-32">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <Lines lines={["От сообщения", "до готового потолка"]} className="text-[clamp(2.1rem,5vw,4.5rem)]" />
-            <a href="/#process" className="link-line self-start text-[0.75rem] uppercase tracking-[0.16em] md:self-auto">Подробно о процессе</a>
+            <a href={withBase("/#process")} className="link-line self-start text-[0.75rem] uppercase tracking-[0.16em] md:self-auto">Подробно о процессе</a>
           </div>
           <ol className="mt-14 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((s, i) => (
