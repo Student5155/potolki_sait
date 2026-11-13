@@ -41,14 +41,13 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
   );
 }
 
-function Field({ n, label, hint, children }: { n: string; label: string; hint?: string; children: ReactNode }) {
+function Field({ label, hint, children }: { label: string; hint?: string; children: ReactNode }) {
   return (
     <fieldset className="border-t border-ivory/10 py-8 md:py-10">
       <legend className="sr-only">{label}</legend>
       <div className="grid gap-5 md:grid-cols-12">
         <div className="md:col-span-4">
-          <p className="eyebrow text-champagne" aria-hidden>{n}</p>
-          <p className="mt-3 text-base text-ivory" aria-hidden>{label}</p>
+          <p className="text-base text-ivory" aria-hidden>{label}</p>
           {hint && <p className="mt-1.5 text-xs leading-relaxed text-ivory/40">{hint}</p>}
         </div>
         <div className="md:col-span-8">{children}</div>
@@ -102,7 +101,7 @@ export function Calculator() {
 
         <div className="mt-14 grid gap-12 lg:mt-20 lg:grid-cols-12 lg:gap-16">
           <Reveal className="lg:col-span-7">
-            <Field n="01" label="Площадь помещения" hint="Примерно — точные размеры снимем на замере.">
+            <Field label="Площадь помещения" hint="Примерно — точные размеры снимем на замере.">
               <div className="flex items-baseline gap-3">
                 <input
                   type="number"
@@ -128,7 +127,7 @@ export function Calculator() {
               />
             </Field>
 
-            <Field n="02" label="Помещение">
+            <Field label="Помещение">
               <div className="flex flex-wrap gap-2">
                 {roomOptions.map((r) => (
                   <Chip key={r} active={room === r} onClick={() => setRoom(r)}>{r}</Chip>
@@ -136,7 +135,7 @@ export function Calculator() {
               </div>
             </Field>
 
-            <Field n="03" label="Тип потолка" hint="Не уверены — выберите «Пока не знаю», подскажем.">
+            <Field label="Тип потолка" hint="Не уверены — выберите «Пока не знаю», подскажем.">
               <div className="flex flex-wrap gap-2">
                 {typeOptions.map((t) => (
                   <Chip key={t} active={type === t} onClick={() => setType(t)}>{t}</Chip>
@@ -144,11 +143,11 @@ export function Calculator() {
               </div>
             </Field>
 
-            <Field n="04" label="Количество светильников">
+            <Field label="Количество светильников">
               <Stepper value={lamps} onChange={setLamps} max={80} label="Светильники" />
             </Field>
 
-            <Field n="05" label="Световые линии" hint="Длину можно указать приблизительно.">
+            <Field label="Световые линии" hint="Длину можно указать приблизительно.">
               <div className="flex flex-wrap items-center gap-x-10 gap-y-6">
                 <div className="flex gap-2">
                   <Chip active={!lines} onClick={() => setLines(false)}>Не нужны</Chip>
@@ -163,11 +162,11 @@ export function Calculator() {
               </div>
             </Field>
 
-            <Field n="06" label="Количество углов" hint="В обычной прямоугольной комнате — четыре.">
+            <Field label="Количество углов" hint="В обычной прямоугольной комнате — четыре.">
               <Stepper value={corners} onChange={setCorners} min={3} max={30} label="Углы" />
             </Field>
 
-            <Field n="07" label="Дополнительные конструкции">
+            <Field label="Дополнительные конструкции">
               <div className="flex flex-wrap gap-2">
                 {extraOptions.map((e) => (
                   <Chip key={e} active={extras.includes(e)} onClick={() => toggleExtra(e)}>{e}</Chip>
@@ -175,7 +174,7 @@ export function Calculator() {
               </div>
             </Field>
 
-            <Field n="08" label="Населённый пункт">
+            <Field label="Населённый пункт">
               <div className="flex flex-wrap gap-2">
                 {[...site.cities, "Другой"].map((c) => (
                   <Chip key={c} active={city === c} onClick={() => setCity(c)}>{c}</Chip>

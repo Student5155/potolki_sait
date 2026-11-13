@@ -50,8 +50,7 @@ export function Immersion() {
         <ul className="mt-20 grid gap-10 border-t border-graphite/15 pt-12 md:mt-32 md:grid-cols-3 md:gap-12 md:pt-16">
           {points.map((p, i) => (
             <Reveal as="li" key={p.n} delay={i * 120}>
-              <p className="eyebrow text-champagne">{p.n}</p>
-              <h3 className="h-display mt-5 text-3xl md:text-[2.25rem]">{p.title}</h3>
+              <h3 className="h-display text-3xl md:text-[2.25rem]">{p.title}</h3>
               <p className="mt-4 max-w-sm text-[0.9375rem] leading-relaxed text-graphite/65">{p.text}</p>
             </Reveal>
           ))}

@@ -94,8 +94,7 @@ export default async function CityPage({ params }: Props) {
           <div className="mt-20 grid gap-x-16 gap-y-16 md:mt-28 md:grid-cols-2">
             {city.sections.map((s, i) => (
               <Reveal as="article" key={s.heading} delay={i * 120} className="border-t border-graphite/15 pt-8">
-                <p className="eyebrow text-champagne">{String(i + 1).padStart(2, "0")}</p>
-                <h2 className="h-display mt-5 text-[2rem] md:text-[2.75rem]">{s.heading}</h2>
+                <h2 className="h-display text-[2rem] md:text-[2.75rem]">{s.heading}</h2>
                 {s.paragraphs.map((p) => (
                   <p key={p.slice(0, 24)} className="mt-5 max-w-xl text-[0.9375rem] leading-relaxed text-graphite/70 md:text-base">{p}</p>
                 ))}
@@ -114,8 +113,7 @@ export default async function CityPage({ params }: Props) {
           <ul className="mt-14 grid border-t border-ivory/10 md:grid-cols-3 md:gap-x-12">
             {city.popular.map((p, i) => (
               <Reveal as="li" key={p.name} delay={i * 100} className="border-b border-ivory/10 py-8 md:border-b-0">
-                <p className="eyebrow text-ivory/30">{String(i + 1).padStart(2, "0")}</p>
-                <h3 className="h-display mt-4 text-[1.9rem]">{p.name}</h3>
+                <h3 className="h-display text-[1.9rem]">{p.name}</h3>
                 <p className="mt-3 text-[0.9375rem] leading-relaxed text-ivory/60">{p.text}</p>
               </Reveal>
             ))}

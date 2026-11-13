@@ -41,9 +41,6 @@ export function CeilingTypes() {
                   aria-label={`${t.name} — посмотреть пример в интерьере`}
                   className="group flex w-full items-baseline gap-6 border-b border-ivory/10 py-[1.05rem] text-left"
                 >
-                  <span className={`eyebrow w-8 transition-colors duration-500 ${active === i ? "text-champagne" : "text-ivory/30"}`}>
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
                   <span className={`h-display whitespace-nowrap text-[2rem] transition-[color,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] xl:text-[2.5rem] ${active === i ? "translate-x-3 text-ivory" : "text-ivory/35"}`}>
                     {t.name}
                   </span>
@@ -87,9 +84,6 @@ export function CeilingTypes() {
                     {current.text}
                   </motion.p>
                 </AnimatePresence>
-                <p className="eyebrow shrink-0 pt-1 text-ivory/35">
-                  {String(active + 1).padStart(2, "0")} / {String(ceilingTypes.length).padStart(2, "0")}
-                </p>
               </div>
             </div>
           </div>
@@ -103,7 +97,6 @@ export function CeilingTypes() {
             <button onClick={() => setZoom(i)} className="relative block aspect-[4/5] w-full overflow-hidden bg-graphite-2" aria-label={`${t.name} — посмотреть пример в интерьере`}>
               <Image src={t.image} alt={t.alt} fill sizes="78vw" className="object-cover" />
               <span className="absolute inset-0 bg-gradient-to-t from-graphite/85 via-transparent to-transparent" />
-              <span className="eyebrow absolute left-4 top-4 text-ivory/80">{String(i + 1).padStart(2, "0")}</span>
               <span className="absolute bottom-4 right-4 flex h-11 w-11 items-center justify-center border border-ivory/30 bg-graphite/70">
                 <Expand size={16} strokeWidth={1.25} />
               </span>
