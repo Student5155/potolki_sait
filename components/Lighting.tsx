@@ -296,7 +296,7 @@ export function Lighting() {
                 );
               })}
             </ul>
-            <p className="mt-6 text-xs leading-relaxed text-ivory/40">
+            <p className="mt-6 text-xs leading-relaxed text-ivory/55">
               Схема условная: реальное расположение света подбирается под планировку вашей комнаты на замере.
             </p>
           </Reveal>

@@ -19,7 +19,7 @@ export function MobileBar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const item = "flex flex-1 flex-col items-center justify-center gap-1 py-2.5 text-[0.625rem] uppercase tracking-[0.14em]";
+  const item = "flex flex-1 flex-col items-center justify-center gap-1 py-2.5 text-[0.6875rem] uppercase tracking-[0.12em]";
 
   return (
     <div

@@ -50,7 +50,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col gap-2 pt-8 text-xs text-ivory/40 md:flex-row md:justify-between">
+        <div className="flex flex-col gap-2 pt-8 text-xs text-ivory/55 md:flex-row md:justify-between">
           <p>© {new Date().getFullYear()} {site.name}. Натяжные потолки.</p>
           <p>Изображения интерьеров — примеры решений, Unsplash.</p>
         </div>

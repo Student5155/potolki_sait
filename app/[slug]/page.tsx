@@ -129,7 +129,7 @@ export default async function CityPage({ params }: Props) {
               </Reveal>
             ))}
           </div>
-          <div className="mt-8 flex flex-col justify-between gap-4 text-xs leading-relaxed text-ivory/40 md:flex-row md:items-center">
+          <div className="mt-8 flex flex-col justify-between gap-4 text-xs leading-relaxed text-ivory/55 md:flex-row md:items-center">
             <p>Изображения — примеры решений. Фотографии наших объектов {city.inName} появятся здесь.</p>
             <a href={withBase("/#gallery")} className="link-line self-start text-[0.75rem] uppercase tracking-[0.16em] text-ivory/80">Вся галерея</a>
           </div>
@@ -168,7 +168,7 @@ export default async function CityPage({ params }: Props) {
                 <Link href={`/${c.slug}/`} className="group flex items-center justify-between border-t border-ivory/10 py-5">
                   <span>
                     <span className="h-display block text-3xl text-ivory/70 transition-colors group-hover:text-ivory">{c.name}</span>
-                    <span className="mt-1 block text-xs text-ivory/40">{c.district}</span>
+                    <span className="mt-1 block text-xs text-ivory/55">{c.district}</span>
                   </span>
                   <ArrowRight size={18} strokeWidth={1.25} className="text-champagne-2 transition-transform duration-500 group-hover:translate-x-1" />
                 </Link>

@@ -30,6 +30,13 @@ html.lenis body {
   overflow: hidden;
 }
 
+/* Телефоны: весь шрифт крупнее на одну и ту же долю. Размеры заданы в rem, поэтому пропорции между ними сохраняются. */
+@media (max-width: 767px) {
+  html {
+    font-size: 112.5%;
+  }
+}
+
 html,
 body {
   overflow-x: clip;
@@ -235,6 +242,19 @@ section[id] {
   transform-origin: left;
   animation: line-draw 2.6s var(--ease-out-expo) both;
   animation-delay: var(--d, 1.2s);
+}
+
+/* ── Полоска времени в блоке «Потолок — это больше…» ── */
+@keyframes step-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+.step-bar {
+  transform-origin: left;
+  animation: step-progress 7s linear forwards;
+}
+.step-paused {
+  animation-play-state: paused;
 }
 
 /* ── Бегущая строка городов ──────────────────── */

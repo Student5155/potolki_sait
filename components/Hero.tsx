@@ -74,18 +74,21 @@ export function Hero() {
       </div>
 
       {/* кинематографическое затемнение ради читаемости текста */}
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,25,27,0.72)_0%,rgba(23,25,27,0.1)_30%,rgba(23,25,27,0.25)_55%,rgba(23,25,27,0.94)_100%)]" />
+      {/* телефон: текст лежит посередине кадра, поэтому затемнение начинается выше и остаётся плотным под всем текстом */}
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,25,27,0.74)_0%,rgba(23,25,27,0.22)_20%,rgba(23,25,27,0.62)_42%,rgba(23,25,27,0.86)_68%,rgba(23,25,27,0.96)_100%)] md:hidden" />
+      {/* компьютер: текст внизу слева, середина кадра остаётся светлой */}
+      <div className="absolute inset-0 hidden bg-[linear-gradient(180deg,rgba(23,25,27,0.72)_0%,rgba(23,25,27,0.1)_30%,rgba(23,25,27,0.25)_55%,rgba(23,25,27,0.94)_100%)] md:block" />
       <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(23,25,27,0.6)_0%,rgba(23,25,27,0)_60%)]" />
 
       {/* световая линия под шапкой */}
       <div className="light-line absolute inset-x-5 top-16 md:inset-x-10 md:top-20" style={{ "--d": "1.1s" } as CSSProperties} aria-hidden />
 
       <div ref={content} className="relative z-10 mx-auto flex w-full max-w-[1680px] flex-1 flex-col justify-end px-5 pb-8 md:px-10 md:pb-12">
-        <p className="eyebrow hero-fade mb-6 text-champagne-2" style={{ "--d": "0.7s" } as CSSProperties}>
+        <p className="eyebrow hero-fade mb-6 text-ivory [text-shadow:0_1px_12px_rgba(0,0,0,0.6)] md:text-champagne-2 md:[text-shadow:none]" style={{ "--d": "0.7s" } as CSSProperties}>
           Натяжные потолки · свет · монтаж
         </p>
 
-        <h1 className="h-display text-[clamp(2.5rem,min(8.4vw,12.5svh),7.25rem)]">
+        <h1 className="h-display [text-shadow:0_2px_24px_rgba(0,0,0,0.55)] md:[text-shadow:none] text-[clamp(2.5rem,min(8.4vw,12.5svh),7.25rem)]">
           {lines.map((line, i) => (
             <span className="hero-line" key={line}>
               <span style={{ "--i": i } as CSSProperties}>{line} </span>
@@ -94,7 +97,7 @@ export function Hero() {
         </h1>
 
         <div className="mt-8 flex flex-col gap-8 md:mt-10 md:flex-row md:items-end md:justify-between">
-          <p className="hero-fade max-w-md text-[0.9375rem] leading-relaxed text-ivory/75 md:text-base" style={{ "--d": "1.35s" } as CSSProperties}>
+          <p className="hero-fade max-w-md text-[0.9375rem] leading-relaxed text-ivory/90 [text-shadow:0_1px_12px_rgba(0,0,0,0.6)] md:text-ivory/75 md:text-base md:[text-shadow:none]" style={{ "--d": "1.35s" } as CSSProperties}>
             Современные натяжные потолки. Продуманный свет. Безупречная геометрия. Профессиональный монтаж.
           </p>
 

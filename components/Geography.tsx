@@ -50,7 +50,7 @@ export function Geography() {
                     <span className={`h-2 w-2 shrink-0 rounded-full transition-all duration-500 ${active === i ? "bg-champagne-2 shadow-[0_0_12px_3px_rgba(205,191,166,0.7)]" : "bg-ivory/25"}`} />
                     <span className="flex-1">
                       <span className={`h-display block text-3xl transition-colors duration-500 md:text-4xl ${active === i ? "text-ivory" : "text-ivory/50"}`}>{p.name}</span>
-                      <span className="mt-1 block text-xs text-ivory/40">{p.district}</span>
+                      <span className="mt-1 block text-xs text-ivory/55">{p.district}</span>
                     </span>
                     <ArrowUpRight size={20} strokeWidth={1.25} className={`transition-all duration-500 ${active === i ? "translate-x-0 text-champagne-2 opacity-100" : "-translate-x-2 opacity-0"}`} />
                   </Link>
@@ -100,7 +100,7 @@ export function Geography() {
                         textAnchor={left ? "end" : "start"}
                         fill="#f2f0eb"
                         fillOpacity={on ? 1 : 0.55}
-                        fontSize="15"
+                        className="[font-size:22px] md:[font-size:16px]"
                         letterSpacing="0.04em"
                         style={{ transition: "fill-opacity .5s ease" }}
                       >
@@ -113,7 +113,7 @@ export function Geography() {
                 <g transform={`translate(${W - 26} 30)`} fill="none" stroke="#f2f0eb" strokeOpacity="0.4">
                   <line x1="0" y1="26" x2="0" y2="0" />
                   <polyline points="-5,8 0,0 5,8" />
-                  <text x="0" y="44" textAnchor="middle" fill="#f2f0eb" fillOpacity="0.45" stroke="none" fontSize="11" letterSpacing="0.2em">С</text>
+                  <text x="0" y="44" textAnchor="middle" fill="#f2f0eb" fillOpacity="0.45" stroke="none" className="[font-size:15px] md:[font-size:11px]" letterSpacing="0.2em">С</text>
                 </g>
               </svg>
 

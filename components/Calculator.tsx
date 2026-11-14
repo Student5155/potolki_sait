@@ -48,7 +48,7 @@ function Field({ label, hint, children }: { label: string; hint?: string; childr
       <div className="grid gap-5 md:grid-cols-12">
         <div className="md:col-span-4">
           <p className="text-base text-ivory" aria-hidden>{label}</p>
-          {hint && <p className="mt-1.5 text-xs leading-relaxed text-ivory/40">{hint}</p>}
+          {hint && <p className="mt-1.5 text-xs leading-relaxed text-ivory/60">{hint}</p>}
         </div>
         <div className="md:col-span-8">{children}</div>
       </div>
@@ -181,7 +181,7 @@ export function Calculator() {
                 ))}
               </div>
               <label className="mt-8 block">
-                <span className="text-xs text-ivory/40">Комментарий — по желанию</span>
+                <span className="text-xs text-ivory/55">Комментарий — по желанию</span>
                 <textarea
                   value={comment}
                   onChange={(e) => setComment(e.target.value.slice(0, 400))}
