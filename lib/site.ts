@@ -8,7 +8,7 @@ export const site = {
   name: "СВОД",
   descriptor: "Натяжные потолки",
   /** Домен сайта без слэша в конце. Можно задать через NEXT_PUBLIC_SITE_URL. */
-  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.ru").replace(/\/$/, ""),
+  url: (process.env.NEXT_PUBLIC_SITE_URL ?? "https://svodpotolok.ru").replace(/\/$/, ""),
   phone: "+79871350550",
   phoneDisplay: "8 987 135-05-50",
   whatsapp: "79871350550",
